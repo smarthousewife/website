@@ -1,15 +1,69 @@
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(font/poppins-italic-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(font/poppins-italic.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(font/poppins-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(font/poppins.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(font/poppins-bold-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(font/poppins-bold.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 html {
   margin: 0;
   padding: 0;
   height: 100%;
+  color: rgb(55, 55, 55);
+  --color1: rgb(44, 146, 129);
+  --color1bg: rgb(41, 171, 156);
+  --color2: rgb(194, 189, 59);
 }
 
 body {
   background: white;
-  margin: 0;
   padding: 0;
+  margin: 0;
   position: relative;
-  font-family: sans-serif;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
   line-height: 1.4;
   min-height: 100%;
   overflow-y: scroll;
@@ -17,70 +71,47 @@ body {
   border-bottom-width: 0px;
 }
 
-header, footer {
-  background: #11111e;
-  color: #5bcdea;
+header {
+  display: flex;
+  gap: 50px;
+  padding: 20px 50px;
 }
 
-header h1 { margin: 0; font-weight: 400; font-size: 2rem }
-
-#doctolib {
-  position: sticky;
-  top: 0;
-  margin-top: 3px;
-}
-
-#doctolib a {
-  position: absolute;
-  right: 0;
-  display: block;
-  text-align: center;
-  opacity: 0.85;
-  background-color: #107ACA;
-  color: white;
-  font-size: 14px;
-  overflow: hidden;
-  width: 100px;
-  border-radius: 4px 0 0 4px;
-  text-decoration: none;
-  padding: 10px;
-}
-
-#doctolib img {
-  height: 15px;
-  margin-top: 10px;
-  vertical-align: bottom;
-}
+header .logo { height: 270px; }
 
 nav {
   display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  padding-top: 30px;
+  max-width: 40rem;
 }
 
 nav a {
   display: block;
-  color: white;
+  color: var(--color1);
   text-decoration: none;
+  font-size: 17px;
   padding: 2px 10px;
   white-space: pre;
 }
-
-nav a:link {
-  color: inherit;
-}
-
-nav a:hover {
-  background: white;
-  color: #111117;
+nav a:hover, nav a.active {
+  text-decoration: underline;
 }
 
 article {
   padding: 0 0 60px;
+  max-width: 55rem;
+  margin: 0 auto;
 }
 
-h1, h2, h3, h4, strong { font-weight: 400; }
+h1, h2, h3, h4, strong { font-weight: 600; }
 
-h1 { font-size: 1.5rem; }
-h2 { font-size: 1.4rem; margin-top: 2rem; }
+h1, h3, h4 { color: var(--color1); }
+h2 { color: var(--color2); }
+
+h1 { font-size: 2.8rem; margin: 0; }
+h2 { font-size: 1.3rem; }
 h3 { font-size: 1.1rem; margin-top: 1.5rem; margin-bottom: 0.5rem; }
 h4 { font-size: 1rem; }
 
@@ -89,12 +120,7 @@ div.footer-flex {
   gap: 50px;
   justify-content: center;
 }
-footer a { color: white; }
-.impressum { font-size: .8rem; text-decoration: none; }
-
-.border {
-  border: 1px solid #3a8d9c;
-}
+footer { background-color: var(--color1bg); color: white; padding: 10px 0; }
 
 table {
   table-layout: fixed;
@@ -107,37 +133,52 @@ blockquote {
 }
 
 a, a:link {
-  text-decoration: none;
-  color: #0b788e;
+  color: var(--color1);
 }
 
 a.subtle {
   color: inherit;
 }
 
+img.picture {
+  height: 400px;
+  border-radius: 9px;
+}
+
+img.right {
+  float: right;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 20px;
+  clear: both;
+  max-width: 30rem;
+}
+.nav-buttons a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 10px;
+  border-radius: 9px;
+  background-color: var(--color1bg);
+  color: white;
+  text-align: center;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-size: 24px;
+
+}
+.nav-buttons a span {
+  display: block;
+  font-size: 16px;
+  text-decoration: underline;
+}
+
 @media only screen and (max-width: 760px) {
   header h1 { font-size: 1.4rem }
-
-  #doctolib {
-    position: relative;
-    margin-top: 0;
-  }
-  #doctolib a {
-    position: relative;
-    border-radius: 0;
-    width: auto;
-    padding-top: 5px;
-  }
-  #doctolib a br {
-    display: none;
-  }
-  #doctolib a img {
-    margin-left: 3px;
-  }
 }
 
 @media only screen and (max-width: 350px) {
-  article {
-    padding-bottom: 15px;
-  }
+  article { padding-bottom: 15px; }
 }
